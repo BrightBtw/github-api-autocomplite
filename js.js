@@ -27,7 +27,6 @@ function clearInput() {
 }
 
 const debounce = (fn, debounceTime) => {
-  //code here
   let timeoutID;
   return function (...args) {
     clearTimeout(timeoutID);
@@ -37,12 +36,12 @@ const debounce = (fn, debounceTime) => {
   };
 };
 
-inputSearch.addEventListener(
-  "input",
-  debounce((event) => {
-    fetchRepo(event.target.value);
-  }, 400),
-);
+function handleInput(event) {
+  fetchRepo(event.target.value);
+}
+const debouncedSearch = debounce(handleSearchInput, 400);
+
+inputSearch.addEventListener("input", debouncedSearch);
 
 function renderAutocompleteList(repos) {
   clearInput();
@@ -71,9 +70,11 @@ function addCard(repo) {
     </div>
     <button class="remove-btn"></button>`;
 
-  const removeBtn = createLi.querySelector(".remove-btn");
-  removeBtn.addEventListener("click", () => {
+  const buttonRemove = createLi.querySelector(".remove-btn");
+  function removeBtn() {
+    buttonRemove.removeEventListener("click", removeBtn);
     createLi.remove();
-  });
+  }
+  buttonRemove.addEventListener("click", removeBtn);
   repoList.appendChild(createLi);
 }
