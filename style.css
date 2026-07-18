@@ -1,0 +1,87 @@
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 400;
+    background-color: #f0f0f0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+p {
+    margin: 0;
+}
+
+.app-container {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 763px;
+    width: 661px;
+    background-color: rgba(196, 196, 196, 1);
+    margin: auto;
+    padding: 60px 0 60px 0;
+}
+
+.search-input {
+    display: flex;
+    width: 500px;
+    height: 61px;
+    font-size: 48px;
+    border: none;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    margin-bottom: 45px;
+}
+
+.autocomplete-list, .repo-list {
+    list-style: none;
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+    width: 500px;
+}
+.autocomplete-list {
+    font-size: 30px;
+}
+.autocomplete-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    border: 2px solid #000000;
+}
+
+.autocomplete-item:hover {
+    background-color: rgba(101, 205, 249, 1);
+}
+
+.repo-list {
+    margin: 0;
+    font-size: 24px;
+}
+
+.repo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #000000;
+    background-color: rgba(226, 123, 235, 1);
+    padding: 0 16px 0 16px;
+    
+}
+
+.remove-btn::after{
+    content: "\00d7";
+    font-size: 100px;
+}
+
+.remove-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 80px;
+    color: red;
+    text-align: center;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+
