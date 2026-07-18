@@ -15,7 +15,6 @@ async function fetchRepo(query) {
       throw new Error("Ошибка, сервер вернул статус от 400 до 599");
     }
     const data = await respons.json();
-    console.log(data.items);
     renderAutocompleteList(data.items || []);
   } catch (error) {
     console.log("Ошибка при получении данных", error.message);
