@@ -39,7 +39,7 @@ const debounce = (fn, debounceTime) => {
 function handleInput(event) {
   fetchRepo(event.target.value);
 }
-const debouncedSearch = debounce(handleSearchInput, 400);
+const debouncedSearch = debounce(handleInput, 400);
 
 inputSearch.addEventListener("input", debouncedSearch);
 
